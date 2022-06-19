@@ -203,6 +203,7 @@ function(generateOsqueryTablesSystemSystemtable)
       windows/logged_in_users.cpp
       windows/logical_drives.cpp
       windows/logon_sessions.cpp
+      windows/monitor_info.cpp
       windows/ntdomains.cpp
       windows/ntfs_acl_permissions.cpp
       windows/objects.cpp
