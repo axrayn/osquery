@@ -306,6 +306,7 @@ function(generateNativeTables)
     "windows/tpm_info.table:windows"
     "windows/security_profile_info.table:windows"
     "windows/windows_search.table:windows"
+    "windows/monitor_info.table:windows"
     "yara/yara_events.table:linux,macos"
     "yara/yara.table:linux,macos,windows"
   )
