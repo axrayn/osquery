@@ -1,0 +1,16 @@
+table_name("monitor_info")
+description("Retrieve monitor information of the machine.")
+schema([
+    Column("active", TEXT, "The monitor is active on the machine."),
+    Column("instance_name", TEXT, "The instance name of the monitor."),
+    Column("manufacture_week", INTEGER, "The week of the year this monitor was manufactured."),
+    Column("manufacture_year", INTEGER, "The year this monitor was manufactured."),
+    Column("manufacturer", TEXT, "The name of the manufacturer of the monitor."),
+    Column("model", TEXT, "The model of the monitor."),
+    Column("monitor_name", TEXT, "The user friendly name of the monitor."),
+    Column("serial_number", TEXT, "The serial number of the monitor."),
+])
+implementation("monitor_info@genMonitorInfo")
+examples([
+  "select * from monitor_info",
+])
