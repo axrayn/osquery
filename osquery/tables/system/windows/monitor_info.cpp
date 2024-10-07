@@ -1,6 +1,6 @@
 #include "osquery/core/tables.h"
-#include "osquery/logger/logger.h"
 #include "osquery/core/windows/wmi.h"
+#include "osquery/logger/logger.h"
 #include "osquery/utils/conversions/tryto.h"
 #include "osquery/utils/conversions/windows/strings.h"
 
@@ -13,9 +13,8 @@ QueryData genMonitorInfo(QueryContext& context) {
 
   // Create the WMI request using WmiRequest::CreateWmiRequest
   const Expected<WmiRequest, WmiError> wmiSystemReq =
-      WmiRequest::CreateWmiRequest(
-          "SELECT * FROM WmiMonitorID",
-          (BSTR)L"ROOT\\WMI");
+      WmiRequest::CreateWmiRequest("SELECT * FROM WmiMonitorID",
+                                   (BSTR)L"ROOT\\WMI");
   if (!wmiSystemReq || wmiSystemReq->results().empty()) {
     LOG(WARNING) << "Error retreiving information from WMI.";
     return results;
@@ -80,7 +79,6 @@ QueryData genMonitorInfo(QueryContext& context) {
 
   return results;
 }
-
 
 } // namespace tables
 } // namespace osquery
